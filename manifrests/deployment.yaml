@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agentapp-backend
+  labels:
+    app: agentapp-backen
+spec:
+  selector:
+    matchLabels:
+      app: agentapp-backen  
+  template:
+    metadata:
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: '*'    
+      labels:
+        app: agentapp-backen
+    spec:
+      containers:
+      - name: agentapp-backend-container
+        image: agentapp-backen:latest
+        ports:
+        - containerPort: 8080
+        envFrom:
+          - secretRef:
+              name: agentapp-backend-secret   

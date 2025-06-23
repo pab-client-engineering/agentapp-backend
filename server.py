@@ -87,7 +87,10 @@ def get_context(file, query):
     print(context)
     return context
 
-
+# Get the PORT from environment
+port = os.getenv('PORT', '8080')
+debug = os.getenv('DEBUG', 'false')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    print("application ready - Debug is " + str(debug))
+    app.run(host='0.0.0.0', port=int(port))
