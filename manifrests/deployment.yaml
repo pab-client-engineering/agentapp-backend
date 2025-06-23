@@ -20,6 +20,3 @@ spec:
         image: agentapp-backen:latest
         ports:
         - containerPort: 8080
-        envFrom:
-          - secretRef:
-              name: agentapp-backend-secret   
