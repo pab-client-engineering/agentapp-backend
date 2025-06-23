@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: agentapp-backend
+spec:
+  path: /
+  to:
+    kind: Service
+    name: agentapp-backend-service
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge    
