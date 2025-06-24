@@ -1,6 +1,8 @@
-FROM python:3.13
+FROM registry.access.redhat.com/ubi9/python-312:latest
 
 # Set the working directory in the container
+USER 0
+RUN mkdir /app
 WORKDIR /app
 
 RUN pip install --upgrade pip

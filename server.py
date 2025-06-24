@@ -1,6 +1,12 @@
 import glob
 import os
 
+# sqlite rh bug
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+
 from flask import Flask
 from flask_cors import CORS
 from flask import request
