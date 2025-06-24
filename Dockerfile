@@ -13,6 +13,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY *.py ./
 
+# Make dirs for files
+RUN mkdir /app/pliki
+
 RUN chown -R 1001:0 /app
 # Adjust permissions on workdir so writable by group root.
 RUN chmod -R g+w /app

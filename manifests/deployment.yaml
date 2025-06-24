@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: agentapp-backend
   labels:
-    app: agentapp-backen
+    app: agentapp-backend
 spec:
   selector:
     matchLabels:
-      app: agentapp-backen  
+      app: agentapp-backend  
   template:
     metadata:
       annotations:
         alpha.image.policy.openshift.io/resolve-names: '*'    
       labels:
-        app: agentapp-backen
+        app: agentapp-backend
     spec:
       containers:
       - name: agentapp-backend-container
-        image: agentapp-backen:latest
+        image: agentapp-backend:latest
         ports:
         - containerPort: 8080
